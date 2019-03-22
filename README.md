@@ -18,3 +18,7 @@ IBM Z Systems platforms.
 
 Everyone is welcome.  You don't have to be a hardcore mainframer to be a member of
 our community.
+
+This repository is organized as follows:
+- [linux](./linux/README.md) - all things related to Linux on Z and LinuxONE
+- [myth_and_lore](./myth_and_lore/README.md)
