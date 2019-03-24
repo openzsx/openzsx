@@ -20,5 +20,9 @@ Everyone is welcome.  You don't have to be a hardcore mainframer to be a member 
 our community.
 
 This repository is organized as follows:
-- [linux](./linux/README.md) - all things related to Linux on Z and LinuxONE
-- [myth_and_lore](./myth_and_lore/README.md)
+- [containers](./containers/README.md) - resources for creating Docker images that
+deploy on z/OS and Linux
+- [native](./native/README.md) - resources for code that runs directly on z/OS and
+Linux
+- [platform](./platform/README.md) - useful tools and information for using the
+IBM Z Systems platform, regardless of operating system
