@@ -22,7 +22,8 @@ our community.
 This repository is organized as follows:
 - [containers](./containers/README.md) - resources for creating Docker images that
 deploy on z/OS and Linux
-- [native](./native/README.md) - resources for code that runs directly on z/OS and
+- [native](./native/README.md) - resources for code that has been ported directly
+to z/OS or Linux
 Linux
 - [platform](./platform/README.md) - useful tools and information for using the
 IBM Z Systems platform, regardless of operating system
