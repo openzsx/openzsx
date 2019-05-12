@@ -43,4 +43,6 @@ requests from the command line interface.
 ### Anatomy of an Image Tag
 A conventional image tag has a schema like this:
 
-_<registry>/<repository>:<version>_
+```
+<registry>/<repository>:<version>
+```
