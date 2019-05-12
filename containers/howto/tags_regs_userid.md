@@ -130,3 +130,20 @@ a prefix to the name that represents a repository I have write access to. My
 Dockerhub userid is jbostian, so I would tag and push the image like this:
 
 ![docker tag and push](./images/docker_tag_and_push.png)
+
+Without the _jbostian_ prefix, it’s as if I were trying to write something to
+Dockerhub’s root directory, which I’m not allowed to do. I could have specified
+any other repository I wanted, as long as I have write access to it.
+
+Docker’s _pull_ and _run_ commands operate in a similar way using tag information
+like this.
+
+## Final Thoughts
+Most command line interfaces would gather necessary information to satisfy a
+request through positional arguments and/or named parameters. This is the first
+interface I remember using that attaches this kind of information to the object
+which is being acted upon.
+
+There is of course no right or wrong way to do this, but if you’re like me, you
+may have struggled a bit as a Docker noob. Once you get used to it works as well
+as any other CLI.
