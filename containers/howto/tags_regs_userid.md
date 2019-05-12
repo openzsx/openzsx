@@ -5,7 +5,7 @@ command line interface can feel awkward, and in some cases, confusing until you
 really understand what’s going on. While Docker’s tutorial is good, the command
 documentation often left me asking _**why ...**_
 
-[docker tag](./images/docker_tag.jpg)
+![docker tag](./images/docker_tag.jpg)
 
 As I’ve become a more capable Docker user, I’ve gained respect for the depth of
 function that can be expressed through this interface.
@@ -40,9 +40,81 @@ closely, the tag command is logically binding metadata represented by the tag
 string to the ```SOURCE_IMAGE``` so that Docker knows how to respond to user
 requests from the command line interface.
 
-### Anatomy of an Image Tag
+## Anatomy of an Image Tag
 A conventional image tag has a schema like this:
 
 ```
 <registry>/<repository>:<version>
+```
+
+The registry and version portions of the tag are optional. If omitted, the
+registry defaults to ```index.docker.io``` and the version becomes ```latest```.
+The registry component of an image tag is required if you aren’t using the
+default Dockerhub. It consists of IP address and port number separated by a colon:
+
+```
+xxx.xxx.xxx.xxx:pppp
+```
+
+where _x_ is a digit of the IP address, and _p_ is a digit of the port number.
+
+Think of the ```repository``` as the name of the image. The ```repository``` is
+effectively a path to the image that is made up of components, just like the name
+of a file in a local file system.
+
+## The Docker Tag Command
+A source of confusion for me has been an apparent recursion in the Docker tag
+command description:
+
+```
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+```
+
+_TARGET_IMAGE_ is referred to as a tag but as you can see, the command
+description uses the term _TAG_ to represent the image version. In actuality,
+everything but the registry portion of the tag has a meaning defined by
+convention, and not actual syntax. That is, you can make the _repository_ and
+_version_ any arbitrary string you want, but you’re better off using these like
+everyone else does. It makes things easier to manage.
+
+If for example you wanted to tag a version ```v2``` of an image with ID ```4f98c0d6d5d4```
+for your private registry at address ```192.168.1.55```, listening to port ```5000```,
+it would look something like this:
+
+```
+docker tag 4f98c0d6d5d4 192.168.1.55:5000/jbostian/get-started:v2
+```
+
+Now when listing all of the Docker images on my system, you’ll see this:
+
+![docker images](./images/docker_images.jpg)
+
+You can attach any number of tags to the same image, and you can remove the
+original image name (friendlyhello:latest), just like any other tag. The image
+itself exists as long as there is at least one tag that references it.
+
+## Docker Operations Through Tags
+Now that the we have attached metadata to the image with the docker tag command,
+we can perform operations that reference the information it contains. For
+instance, if you want to push this to your private registry, you would just use
+the Docker _push_ command, specifying the tag that we just created:
+
+```
+docker push 192.168.1.55:5000/jbostian/get-started:v2
+```
+
+If you wanted to push the same image up to Dockerhub, you would just use the
+other tag, since Dockerhub is the default repository:
+
+```
+> docker push friendlyhello
+The push refers to repository [docker.io/library/friendlyhello]
+6b0b6a9d6ac6: Preparing
+b3b808bbd18e: Preparing
+53c7a2113e4a: Preparing
+b290994a0abd: Preparing
+a33a8a09e38e: Preparing
+c1a7ac589708: Waiting
+24fd38911d96: Waiting
+denied: requested access to the resource is denied
 ```
