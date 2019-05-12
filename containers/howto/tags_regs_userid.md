@@ -87,7 +87,7 @@ docker tag 4f98c0d6d5d4 192.168.1.55:5000/jbostian/get-started:v2
 
 Now when listing all of the Docker images on my system, you’ll see this:
 
-![docker images](./images/docker_images.jpg)
+![docker images](./images/docker_images.png)
 
 You can attach any number of tags to the same image, and you can remove the
 original image name (friendlyhello:latest), just like any other tag. The image
@@ -118,3 +118,15 @@ c1a7ac589708: Waiting
 24fd38911d96: Waiting
 denied: requested access to the resource is denied
 ```
+
+Why did this _access denied_ failure happen? Because the default friendlyhello
+repository in the tag didn’t contain a prefix that you have write authority to.
+Remember, this is like a path for your Dockerhub userid. Your userid at the
+target registry will have write access to any repository name that begins with
+the name of your user — like a home directory.
+
+If I were going to push this up to Dockerhub, I would need to tag the image with
+a prefix to the name that represents a repository I have write access to. My
+Dockerhub userid is jbostian, so I would tag and push the image like this:
+
+![docker tag and push](./images/docker_tag_and_push.png)
