@@ -8,11 +8,11 @@ system deployments.
 Docker is a popular interface to a set of Linux infrastructure generally referred
 to as _**Linux Containers**_
 [https://linuxcontainers.org/](https://linuxcontainers.org/).  This is why
-Docker was first implemented on Linux, and only recently has become available
+Docker was first implemented on Linux, and has recently become available
 for platforms like IBM z/OS, Microsoft Windows and Apple MacOS.
 
 Docker has succeeded because it provides the command line and application
-programming interfaces to Linux containers that make it relatively easy for
+programming interfaces to Linux Containers that make them relatively easy for
 developers to use when packaging their applications.  It allows them to
 "containerize" their applications to make them more modular, and to share code
 between multiple applications on the same Linux system.  In this way, it brings
@@ -23,11 +23,11 @@ Containers provide application isolation on a single system image, along with a
 means for developers to make use of system resource abstractions for CPU, memory,
 network, and disks (file systems).  This is for applications that often run
 best together on the same system instance.  They use the system abstractions
-of Linux containers to define how other applications can interface with them,
-and to reasonably quantify and limit the system resources the application will use.
-These application resource requirement descriptions are estimates that can have
-a significant margin of error, but they do force the developer to think about
-the runtime characteristics of what they are creating.
+provided by Linux Containers to define how other applications can interface with
+them, and to reasonably quantify and limit the system resources that the application
+will use.  These application resource requirement descriptions are estimates that
+can have a significant margin of error, but they do force the developer to think
+about the runtime characteristics of what they are creating.
 
 Containers fit naturally with the devOPs model of application development,
 where the developer has a certain level of control over how their application is
@@ -40,20 +40,21 @@ As the development community has adopted the container-based model for
 workload deployment that includes estimates of required system resources, they
 have enabled the rise of the cloud model.  Workloads can be managed based on
 resource usage descriptors to create workload-balanced configurations,
-enhance availability and improve deployment efficiency for applications with
-specific hardware requirements.  The orchestration of workloads in a cloud
-deployment makes containers a key piece of modern computing infrastructure.   
+enhance availability, and improve deployment efficiency for applications with
+specific hardware requirements.  Workload management in a cloud environment through
+the orchestrated deployment of containers makes them a key piece of modern
+computing infrastructure.   
 
 
 ## Using Docker
 The focus of this explanation is to give a z/OS system administrator a starting
 point for using Docker in an IBM z/OS Container Extensions (zCX) appliance.  It
-assumes that the appliance has been provisioned and allocated enough resources
-to accommodate a moderate workload.
+assumes that the appliance has been provisioned with enough resources to
+accommodate a moderate workload.
 
 ### Images, Layers and Containers
 First, some terminology definition and review.  The binary content to run using
-docker is an _image_, while an instance of that running binary is a _container_.
+Docker is an _image_, while a running instance of that binary is a _container_.
 It's analogous to the relationship between a load module and a running program.
 Sometimes these terms are used interchangeably, but the distinction is important
 for Docker's command line interface (CLI).
@@ -116,12 +117,12 @@ zCX appliance.
 
 
 ## Hello World
-Many of the steps here are derived from the
-_**[Get started with Docker](https://docs.docker.com/get-started/)**_ tutorial.
-This documentation is good at describing what docker does, and how to use docker
+Many of the steps here are derived from Docker's
+_**[Get Started](https://docs.docker.com/get-started/)**_ tutorial.  This
+documentation is good at describing what Docker does, and how to use Docker
 interfaces.  It's a good reference for details not covered here.
 
-This assignment is built around a web-based python application that makes use of
+This example is built around a web-based python application that makes use of
 the _flask_ framework to serve web content, and a _Redis_ in-memory database.
 This assignment won't actually make use of the database, but it's part of
 the application that illustrates how Redis is used in a more advanced
@@ -141,7 +142,7 @@ deploy this image in different configurations to illustrate how Docker works.
 There are 3 primary source parts:
 
 - _**requirements.txt**_ - this is a list of packages referenced by the application
-that is passed on to the the python package manager (_pip_) so that it can fetch
+that is passed on to the the Python package manager (_pip_) so that it can fetch
 those packages for the application to use.
 - _**app.py**_ - the application.  This is what will run in the Docker container.
 - _**Dockerfile**_ - the recipe that Docker uses to build the image.
@@ -205,7 +206,7 @@ if __name__ == "__main__":
 ```
 
 #### Dockerfile
-This is the recipe that Docker uses to build an image.
+This is the recipe that Docker uses to build the image.
 
 ```
 # Use an official Python runtime as a parent image
@@ -352,7 +353,7 @@ Now we can start a container from the image that we just built:
  * Debug mode: off
 ```
 
-This command told Docker to map port 80 for the image to port 4000 in the running
+This command told Docker to map port 80 for the image to port 4000 for the running
 container.  Now if you point your browser to the IP address of your appliance at
 port 4000, and you'll see the app's web interface:
 
