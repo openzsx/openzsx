@@ -38,7 +38,7 @@ OZSX community.
     <td><a href="#maintainer">Maintainer</a></td>
     <td>Approve contributions from other members</td>
     <td>Highly experienced and active reviewer and contributor to an area</td>
-    <td>Like a member, plus:
+    <td>Is a member, plus:
       <ul>
         <li>Approves code changes in GitHub</li>
         <li>Regularly submits and merges PRs</li>
