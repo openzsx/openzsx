@@ -26,5 +26,5 @@ deploy on z/OS and Linux
 to z/OS Unix System Services
 - [platform](./platform/README.md) - useful tools and information for using the
 IBM Z Systems platform, regardless of operating system
-- [community](./community/README.md) - information about how the community
-operates, how to contribute, and how to become a member
+- [community](https://github.com/openzsx/community) - information about how the
+community operates, how to contribute, and how to become a member
