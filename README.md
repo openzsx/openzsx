@@ -5,21 +5,18 @@
 _**A Public Square for Open Source on IBM Z Systems**_
 
 # The Open Z Systems Exchange
-Welcome to the exchange.  This is where you can get help to bring your open
-source project to a IBM Z Systems mainframe.
+Welcome to the exchange.  Learn more about bringing your Linux-based open source
+project to an IBM Z Systems mainframe.
 
-This is a community of developers, system administrators, and users who
-share a common interest in the mainframe ecosystem of projects, tools, and
-infrastructure, and knowledge.  The resources here are relevant to for users of
-both z/OS and Linux/LinuxONE.
+This is a community of developers, architects, system administrators, and users
+who share a common interest in the IBM Z open source ecosystem.  Along with a
+practical set of infrastructure and knowledge, you will find tools and projects
+that are useful for IBM Z deployments.  The resources here are relevant for users
+of both z/OS and Linux/LinuxONE.  
 
-This community shares a common interest with the members of the
-[Zowe project](https://github.com/zowe).  However, the focus here is on bringing
-open source projects that have been developed for other environments to one of the
-IBM Z Systems platforms.
-
-Everyone is welcome.  You don't have to be a hardcore mainframer to be a member of
-our community.
+Everyone is welcome.  If you have a Linux background, most of this will feel very
+familiar.  If you have mainframed for years, the content here should help you
+understand the Linux world in a recognizable context.
 
 This repository is organized as follows:
 - [containers](./containers/README.md) - resources for creating Docker images that
@@ -28,5 +25,5 @@ deploy on z/OS and Linux
 to z/OS Unix System Services
 - [platform](./platform/README.md) - useful tools and information for using the
 IBM Z Systems platform, regardless of operating system
-- [community](./community/README.md) - information about how the community
-operates, how to contribute, and how to become a member
+- [community](https://github.com/openzsx/community) - information about how the
+community operates, how to contribute, and how to become a member
