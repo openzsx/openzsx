@@ -2,6 +2,8 @@
 
 !["openzsx logo"][openzsx logo]
 
+_**A Public Square for Open Source on IBM Z Systems**_
+
 # The Open Z Systems Exchange
 Welcome to the exchange.  This is where you can get help to bring your open
 source project to a IBM Z Systems mainframe.
